@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Booking</title>
+    <link rel="stylesheet" href="../static/customer_book.css">
+
+</head>
+<body>
+    <div class="navigation-bar">
+        <div id="navigation-container">
+            <img src="../static/logo.svg" alt="logo" width="80px" height="100px">    
+            <ul>
+                <li><a href="customer_home.html">Home</a></li>
+                <li><a href="/customer_profile">Profile</a></li>
+                <li><a href="/customer_history">History</a></li>
+                <li><a href="{{url_for('logout')}}">Log out</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <p>Redirecting to payment page in 30 seconds</p>
+    <div class="rounded-container1">
+        <!-- Your content goes here -->
+        <div>
+            <h2>
+                Ride Details
+            </h2>
+            <form method="POST" action="/customer_book">
+                <div>
+                    <label for="pickup_loc">Pick Up Location:</label>
+                    <input type="text" id="pickup_loc" name="pickup_loc" value="{{ data.pickup_loc }}" readonly required>  
+                </div>
+                      
+                <div>
+                    <label for="dropoff_loc">Drop Off Location:</label>
+                    <input type="text" id="dropoff_loc" name="dropoff_loc" value="{{ data.dropoff_loc }}" readonly required> 
+                </div>
+                <div>
+                    <label for="pickup_time_estimate">Estimated Time:</label>
+                    <input type="text" id="pickup_time_estimate" name="pickup_time_estimate" value="{{ data.pickup_time_estimate }}" readonly required> 
+                </div>
+                <div>
+                    <label for="estfare">Approx. Fare:</label>
+                    <input type="text" id="estfare" name="estfare" value="{{ data.estfare }}" readonly required>  
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+    <div class="rounded-container2">
+        <!-- Your content goes here -->
+        <div class="div1">
+            <h2>
+                Driver Details
+            </h2>
+            <form method="POST" action="/customer_book">
+                <div>
+                    <label for="driver_first_name">Name:</label>
+                    <input type="text" id="driver_first_name" name="driver_first_name" value="{{ data.driver_first_name }}" readonly required>  
+                </div>
+                      
+                <div>
+                    <label for="phone_num">Phone No:</label>
+                    <input type="text" id="phone_num" name="phone_num" value="{{ data.phone_num }}" readonly required> 
+                </div>
+                <div>
+                    <label for="rating">Rating:</label>
+                    <input type="text" id="rating" name="rating" value="{{ data.rating }}" readonly required> 
+                </div>
+            </form>
+        </div>
+        <div class = 'div2'>
+            <h2>
+                Cab Details
+            </h2>
+            <form method="POST" action="/customer_book">
+                <div>
+                    <label for="licence_plate_no">Licence No:</label>
+                    <input type="text" id="licence_plate_no" name="licence_plate_no" value="{{ data.licence_plate_no }}" readonly required>  
+                </div>
+                <div>
+                    <label for="model">Model:</label>
+                    <input type="text" id="model" name="model" value="{{ data.model }}" readonly required>  
+                </div>
+                      
+                <div>
+                    <label for="brand">Brand:</label>
+                    <input type="text" id="brand" name="brand" value="{{ data.brand }}" readonly required> 
+                </div>
+                <div>
+                    <label for="manufacture_year">Year:</label>
+                    <input type="text" id="manufacture_year" name="manufacture_year" value="{{ data.manufacture_year }}" readonly required> 
+                </div>
+                 <div>
+                    <label for="estfare">Approx. Fare:</label>
+                    <input type="text" id="estfare" name="estfare" value="{{ data.estfare }}" readonly required>  
+                </div> 
+
+
+            </form>
+            <img src="../static/taxi_model.png" alt="taxi_model" width="80px" height="100px">
+        </div>
+        <div>
+            <button type="button" onclick="">Cancel Ride</button>
+        </div>
+    </div>
+</body>
+</html>

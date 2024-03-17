@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Booking</title>
+    
+
+    <link rel="stylesheet" href="../static/driver_home.css">
+</head>
+<body>
+    <div class="navigation-bar">
+        <div id="navigation-container">
+            <img src="../static/logo.svg" alt="logo" width="80px" height="100px">    
+            <ul>
+                <li><a href="/driver_home">Home</a></li>
+                <li><a href="/driver_ride_history">History</a></li>
+                <li><a href="{{url_for('logout')}}">Log out</a></li>
+             
+               </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="title_driver_home">        
+            <h1>Welcome,</h1>
+        </div>
+    </div>
+    <div class ='driver_home_main'>
+        <div class="rounded-container1">
+            <img src="../static/driver.gif" class="taxi_image" alt="taxi_image" width="600px" height="400px">
+        </div>
+    
+        <div class="rounded-container2">
+            <div>
+                <h2>Profile</h2>
+                {% if cab_details %}
+                    <!-- Display Driver details -->
+                    <p>First Name: {{ cab_details.driver_first_name }}</p>
+                    <p>Last Name: {{ cab_details.driver_last_name }}</p>
+                    <p>License No: {{ cab_details.license_no }}</p>
+                    <p>Phone No: {{ cab_details.phone_num }}</p>
+                    <p>Email: {{ cab_details.driver_email }}</p>
+                    <p>Total Earning: ${{ total_earnings }}</p>
+                    <!-- Add other details as needed -->
+                {% else %}
+                    <p>Driver details not available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+   
+
+    <section class="trip-history">
+        <div class="rounded-container3">
+            <h2>Car Details</h2>
+            <table>
+                <tr>
+                    <th>Licence Plate No</th>
+                    <th>Model</th>
+                    <th>Brand</th>
+                    <th>Max Seats</th>
+                    <th>Year</th>
+                </tr>
+                <tbody>
+                    {% for row in data %}
+                        <tr>
+                            <td>{{ row.licence_plate_no }}</td>
+                            <td>{{ row.model }}</td>
+                            <td>{{ row.brand }}</td>
+                            <td>{{ row.max_seats }}</td>
+                            <td>{{ row.manufacture_year }}</td>
+                            <!-- Add more table data cells as needed -->
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div

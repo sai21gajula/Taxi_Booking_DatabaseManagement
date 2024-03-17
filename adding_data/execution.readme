@@ -1,0 +1,7 @@
+# order for executing insert queries
+
+1. download the datasets from dataset repo and run "adding_driver_details_and_cab_details"
+2. customer_details
+3. rider_details
+4. pickup_time_estimation
+5. trip_request

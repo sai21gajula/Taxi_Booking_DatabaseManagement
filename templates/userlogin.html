@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="User login-form">
+        <h1>Login</h1>
+        <form method="POST" action="/userlogin">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            
+            <input type="submit" value="Login">
+        </form>
+        <p>Don't have an account? <a class="signup-link" href="/signupuser">Sign Up</a></p>
+    </div>
+</body>
+</html>

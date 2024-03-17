@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Booking</title>
+    <link rel="stylesheet" href="../static/customer_review.css">
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="navigation-bar">
+        <div id="navigation-container">
+            <img src="../static/logo.svg" alt="logo" width="80px" height="100px">    
+            <ul>
+                <li><a href="/customer_home">Home</a></li>
+                <li><a href="/customer_profile">Profile</a></li>
+                <li><a href="/customer_history">History</a></li>
+                <li><a href="{{url_for('logout')}}">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="rounded-container">
+        <div>
+            <h2>Driver Feedback</h2>
+
+            <form method="POST" action="/feedback">
+                <label for="c_feedback">Feedback:</label>
+                <input type="text" id="c_feedback" name="c_feedback"   required>
+                <label for="c_rating">Rating</label>
+                <input type="number" id="c_rating" name="c_rating" min="0" max="5" required>
+                <div class="profile_button">
+                    <a href="/customer_history">Skip</a>
+                    <button type="button" onclick="redirectToCustomerHome()">Continue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+         function redirectToCustomerHome() {
+        // Assuming you want to redirect to "/customer_home"
+        window.location.href = "/customer_home";
+    }
+        function enableFields() {
+            $('#c_first_name').prop('readonly', false);
+            $('#c_last_name').prop('readonly', false);
+            $('#c_phone_number').prop('readonly', false);
+            $('#c_dob').prop('readonly', false);
+            $('#c_email').prop('readonly', false);
+
+            // Show the update button
+            $('#update').show();
+        }
+    </script>
+</body>
+</html>

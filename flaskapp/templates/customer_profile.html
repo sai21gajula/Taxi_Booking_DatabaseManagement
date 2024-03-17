@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Booking</title>
+    <link rel="stylesheet" href="../static/customer_profile.css">
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="navigation-bar">
+        <div id="navigation-container">
+            <img src="../static/logo.svg" alt="logo" width="80px" height="100px">    
+            <ul>
+                <li><a href="customer_home">Home</a></li>
+                <li><a href="/customer_profile">Profile</a></li>
+                <li><a href="/customer_history">History</a></li>
+                <li><a href="{{url_for('logout')}}">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="rounded-container">
+        <div>
+            <h2>Profile</h2>
+
+            <form method="POST" action="/profile_update">
+                <label for="c_first_name">First Name:</label>
+                <input type="text" id="c_first_name" name="c_first_name" value="{{ data[0].customer_first_name }}" readonly required>        
+
+                <label for="c_last_name">Last Name:</label>
+                <input type="text" id="c_last_name" name="c_last_name" value="{{ data[0].customer_last_name }}" readonly required>  
+
+                <label for="c_phone_number">Phone Number:</label>
+                <input type="text" id="c_phone_number" name="c_phone_number" value="{{ data[0].phone_num }}" readonly required>  
+
+                <label for="c_dob">DOB:</label>
+                <input type="text" id="c_dob" name="c_dob" value="{{ data[0].date_of_birth }}" readonly required>  
+
+                <label for="c_email">Email:</label>
+                <input type="text" id="c_email" name="c_email" value="{{ data[0].Customer_email }}" readonly required>  
+            
+                <div class="profile_button">
+                    <a href="/customer_home">Cancel</a>
+                    <button type="button" onclick="enableFields()" id="update_botton">Update</button>
+                    <input type="submit" value="Save" id="update" style="display:none;">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function enableFields() {
+            $('#c_first_name').prop('readonly', false);
+            $('#c_last_name').prop('readonly', false);
+            $('#c_phone_number').prop('readonly', false);
+            $('#c_dob').prop('readonly', false);
+            $('#c_email').prop('readonly', false);
+
+            // Show the update button
+            $('#update').show();
+            update_botton.style.display = 'none';
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Booking</title>
+    <link rel="stylesheet" href="../static/customer_home.css">
+</head>
+<body>
+
+    <div class="navigation-bar">
+        <div id="navigation-container">
+            <img src="../static/logo.svg" alt="logo" width="80px" height="100px">    
+            <ul>
+                <li><a href="customer_home.html">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">History</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="title_customer_home">        
+            <h1>Hello</h1>
+            <h1>Customer,</h1>
+        </div>
+    </div>
+
+    <img src="../static/taxi.svg" class="taxi_image" alt="taxi_image" width="700px" height="500px">
+
+    <div class="rounded-container">
+        <div>
+            <h2>Ride Information</h2>
+            <p class='container-p'>Cab Details:</p>
+
+            <!-- Display cab details -->
+            <p>License Plate Number: {{ cab_details.license_plate_no }}</p>
+            <p>Model: {{ cab_details.model }}</p>
+            <p>Brand: {{ cab_details.brand }}</p>
+            <p>Max Seats: {{ cab_details.max_seats }}</p>
+            <p>Manufacture Year: {{ cab_details.manufacture_year }}</p>
+
+            <!-- Link to driver's home page -->
+            <a href="/driver_home">Go to Driver's Home</a>
+        </div>
+    </div>
+</body>
+</html>

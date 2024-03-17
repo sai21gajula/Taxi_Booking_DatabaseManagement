@@ -1,0 +1,162 @@
+body {
+    background-color: #E8DFCA;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+}
+
+.logo {
+    float: left;
+  }
+  /* ~~ Top Navigation Bar ~~ */
+  
+  #navigation-container {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100px;
+  }
+  
+  .navigation-bar {
+    height: 100px;
+    width: 100%;
+    text-align:right;
+  }
+  .navigation-bar img{
+  float:left;
+  }
+  .navigation-bar ul {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display:inline-block;
+    vertical-align:top;
+  }
+  
+  .navigation-bar li {
+    list-style-type: none;
+    padding: 0px;
+    height: 24px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: inline;
+  }
+  
+  .navigation-bar li a {
+    color: black;
+    font-size: 16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    line-height: 70px;
+    padding: 5px 15px;
+    opacity: 0.7;
+    color: black; /* Initial text color */
+    transition: color 0.7s ease
+  }
+
+  .navigation-bar li a:hover{
+    color: #7a6255;
+    font-weight: 600;
+  }
+
+  .rounded-container {
+    margin: 0 auto;
+    width: 450px; /* 70% of the viewport width */
+    height: 550px; 
+    padding: 10px;
+    border: 10px solid #F5EFE6; /* Border color represents the frame color */
+    border-radius: 20px; /* Adjust the border-radius to control the roundness */
+    background-color: #F5EFE6; /* Set the background color of the container */
+} 
+
+h2 {
+
+    text-align: center;
+}
+
+.container-p {
+    margin-top:10%;
+    margin-left: 5%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;     
+}
+
+p {
+    font-size: 21px;
+}
+
+input[type=text]{
+    width: 400px;
+    border: none;
+    border-bottom: 2px solid black;
+    margin: 20px;
+    font-size: 21px;
+    text-align: center;
+    background-color: #F5EFE6;
+}
+
+label {
+    align-items: start;
+    margin-left: 5%;
+}
+
+.profile_button {
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;  
+}
+
+#update {
+    font-size: 21px;
+    width: 150px;
+    height: 50px;
+    background-color: #E9DAC1;
+    border: 10px;
+    border-radius: 20px;
+    margin-left: 40px;
+    
+
+} 
+
+#update:hover{
+    font-size: 21px;
+    background-color: #D8B6A4;
+    border: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    
+
+} 
+#update_botton{
+  font-size: 21px;
+  width: 150px;
+  height: 50px;
+  background-color: #E9DAC1;
+  border: 10px;
+  border-radius: 20px;
+  margin-left: 40px;
+}
+
+#update_botton:hover{
+  font-size: 21px;
+  background-color: #D8B6A4;
+  border: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+.profile_button a {
+    text-decoration: none;
+    color: #000;
+}
+
+.profile_button a:hover{
+    text-decoration: underline;
+    color: #D8B6A4;
+}
+
+
+/* .profile_button input {
+} */

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Booking</title>
+    <link rel="stylesheet" href="../static/customer_book.css">
+</head>
+<body>
+    <div class="navigation-bar">
+        <div id="navigation-container">
+            <img src="../static/logo.svg" alt="logo" width="80px" height="100px">    
+            <ul>
+                <li><a href="/customer_home">Home</a></li>
+                <li><a href="/customer_profile">Profile</a></li>
+                <li><a href="/customer_history">History</a></li>
+                <li><a href="{{url_for('logout')}}">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="countdown-timer"><font size="+3">Redirecting to Payment Page in  <span id="countdown">30</span> seconds...</font></div>
+    <div class="rounded-container1">
+        <!-- Ride Details Section -->
+        <div>
+            <h2>Ride Details</h2>
+            <form id="rideDetailsForm">
+                <div>
+                    <label for="trip_id">Trip Id:</label>
+                    <input   class = 'sep1' type="text" id="trip_id" name="trip_id" value="{{ data.trip_id }}" readonly required>  
+                </div>
+                <div >
+                    <label for="pickup_loc">Pick Up Location:</label>
+                    <input  class = 'sep1' type="text" id="pickup_loc" name="pickup_loc" value="{{ data.pickup_loc }}" readonly required>  
+                </div>
+                <div>
+                    <label for="dropoff_loc">Drop Off Location:</label>
+                    <input   class = 'sep1' type="text" id="dropoff_loc" name="dropoff_loc" value="{{ data.dropoff_loc }}" readonly required> 
+                </div>
+                <div>
+                    <label for="pickup_time_estimate">Estimated Time:</label>
+                    <input  class = 'sep1' type="text" id="pickup_time_estimate" name="pickup_time_estimate" value="{{ data.pickup_time_estimate }}" readonly required> 
+                </div>
+                <div>
+                    <label for="estfare">Approx. Fare:</label>
+                    <input  class = 'sep1' type="text" id="estfare" name="estfare" value="{{ data.estfare }}" readonly required>  
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="rounded-container2">
+        <!-- Driver Details Section -->
+        <div class="div1">
+            <h2>Driver Details</h2>
+            <form id="driverDetailsForm">
+                <div class="sep">
+                    <label for="driver_first_name">Name:</label>
+                    <input type="text" id="driver_first_name" name="driver_first_name" value="{{ data.driver_first_name }}" readonly required>  
+                </div>
+                <div class="sep">
+                    <label for="phone_num">Phone:</label>
+                    <input type="text" id="phone_num" name="phone_num" value="{{ data.phone_num }}" readonly required> 
+                </div>
+                <div class="sep">
+                    <label for="rating">Rating:</label>
+                    <input type="text" id="rating" name="rating" value="{{ data.rating }}" readonly required> 
+                </div>
+            </form>
+        </div>
+
+        <!-- Cab Details Section -->
+        <div class='div2'>
+            <h2>Cab Details</h2>
+            <form id="cabDetailsForm">
+                <div class="sep">
+                    <label for="licence_plate_no">Licence:</label>
+                    <input type="text" id="licence_plate_no" name="licence_plate_no" value="{{ data.licence_plate_no }}" readonly required>  
+                </div>
+                <div class="sep">
+                    <label for="model">Model:</label>
+                    <input type="text" id="model" name="model" value="{{ data.model }}" readonly required>  
+                </div>
+                <div class="sep">
+                    <label for="brand">Brand:</label>
+                    <input type="text" id="brand" name="brand" value="{{ data.brand }}" readonly required> 
+                </div>
+                <div class="sep">
+                    <label for="manufacture_year">Year:</label>
+                    <input type="text" id="manufacture_year" name="manufacture_year" value="{{ data.manufacture_year }}" readonly required> 
+                </div>
+            </form>
+            <img src="../static/taxi_model.png" alt="taxi_model" width="80px" height="100px">
+        </div>
+        <div>
+            <button type="button" id="cancelRideButton">Cancel Ride</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Cancel Ride and Countdown Redirect -->
+    <script>
+        let countdownValue = 3; // Countdown value in seconds
+
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            if (countdownValue > 0) {
+                countdownValue--;
+                countdownElement.textContent = countdownValue;
+            } else {
+                clearInterval(countdownInterval); // Stop the countdown
+                completeRide(); // Automatically complete the ride when countdown reaches 0
+            }
+        }
+
+        function handleCancelRide() {
+            const tripId = document.getElementById('trip_id').value;
+            const estFare = document.getElementById('estfare').value;
+
+            fetch('/cancel_ride', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    trip_id: tripId,
+                    status: 'cancelled',
+                }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    clearInterval(countdownInterval); // Stop the countdown on successful cancellation
+                    window.location.href = "/customer_home"; // Redirect to home on cancellation
+                } else {
+                    console.error('Cancellation request failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function completeRide() {
+            const tripId = document.getElementById('trip_id').value;
+            const estFare = document.getElementById('estfare').value;
+
+            fetch('/customer_book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    trip_id: tripId,
+                    estfare: estFare,
+                    status: 'completed'
+                }),
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = "/customer_payment"; // Redirect to the payment page
+                } else {
+                    console.error('Ride completion request failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+
+        document.getElementById('cancelRideButton').addEventListener('click', handleCancelRide);
+        const countdownInterval = setInterval(updateCountdown, 1000); // Start the countdown
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Booking</title>
+    <link rel="stylesheet" href="../static/customer_payment.css">
+    <style>
+        /* CSS for the popup message */
+        .popup-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #b86f6f;
+            padding: 60px;
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation-bar">
+        <div id="navigation-container">
+            <img src="../static/logo.svg" alt="logo" width="80px" height="100px">    
+            <ul>
+                <li><a href="customer_home">Home</a></li>
+                <li><a href="/customer_profile">Profile</a></li>
+                <li><a href="/customer_history">History</a></li>
+                <li><a href="{{url_for('logout')}}">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="rounded-container">
+        <div>
+            <h2>Payment</h2>
+            <form method="POST" action="/customer_payment">
+               <div class="divider">
+                <label for="card_no">Card No:</label>
+                <input type="text" id="card_no" name="card_no" required> 
+               </div>
+                      
+               <div class="divider">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required> 
+               </div>
+                 
+               <div class="divider">
+                <label for="exp_date">Expiry:</label>
+                <input type="date" id="exp_date" name="exp_date" required>  
+               </div>
+               <div class="divider_dropdown">
+                <label class="drop_down" for="card_type">Card Type:</label>
+               <select name="card_type" id="card_type" required>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+               </select>
+               </div>
+
+               <div class="divider">
+                <label for="billing_address_street">Street:</label>
+                <input type="text" id="billing_address_street" name="billing_address_street" required>  
+               </div>
+               
+                <div class="divider">
+                    <label for="billing_address_apt">Apt/Unit:</label>
+                    <input type="text" id="billing_address_apt" name="billing_address_apt" required>      
+                </div>
+
+                <div class="divider">
+                    <label for="billing_address_city">City:</label>
+                    <input type="text" id="billing_address_city" name="billing_address_city" required>      
+                </div>
+
+                <div class="divider">
+                    <label for="billing_address_zip">Zip Code:</label>
+                    <input type="text" id="billing_address_zip" name="billing_address_zip" required>      
+                </div>
+
+               
+
+               <div class="payment_button">
+                    <input type="submit" value="Pay" id="payment">
+                </div>
+            </form>
+        </div>
+
+        <div id="popup-message" class="popup-message">
+            Booking is successful!
+        </div>
+    </div>
+
+    <script>
+        // Function to display the popup message
+        function showPopupMessage(message) {
+            const popup = document.getElementById('popup-message');
+            popup.textContent = message;
+            popup.style.display = 'block';
+
+            setTimeout(function () {
+                popup.style.display = 'none';
+                window.location.href = '/customer_review'; // Redirect to customer home page
+            }, 2000); // Redirect after 2 seconds (2000 milliseconds)
+        }
+
+        // Check if the popup should be displayed
+        {% if show_popup %}
+            showPopupMessage('Booking is successful!');
+        {% endif %}
+    </script>
+</body>
+</html>

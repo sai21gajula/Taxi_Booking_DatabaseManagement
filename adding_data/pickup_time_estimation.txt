@@ -1,0 +1,13 @@
+INSERT INTO Pickup_time_estimation
+(pickup_id, driver_location, Driverdriver_id) 
+VALUES 
+(1,'Copley', 1),
+(2,'Medford', 2),
+(3,'Logan airport', 3),
+(4,'Brookline', 4),
+(5,'Roxbury', 5),
+(6,'Dorchester', 6),
+(7,'Fenway', 7),
+(8,'Huntington Ave', 8),
+(9,'Backbay', 9),
+(10,'Backbay', 10);

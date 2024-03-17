@@ -1,0 +1,193 @@
+body {
+    background-color: #E8DFCA;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+}
+
+.logo {
+    float: left;
+  }
+  /* ~~ Top Navigation Bar ~~ */
+  
+  #navigation-container {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100px;
+  }
+  
+  .navigation-bar {
+    height: 100px;
+    width: 100%;
+    text-align:right;
+  }
+  .navigation-bar img{
+  float:left;
+  }
+  .navigation-bar ul {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display:inline-block;
+    vertical-align:top;
+  }
+  
+  .navigation-bar li {
+    list-style-type: none;
+    padding: 0px;
+    height: 24px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: inline;
+  }
+  
+  .navigation-bar li a {
+    color: black;
+    font-size: 16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    line-height: 70px;
+    padding: 5px 15px;
+    opacity: 0.7;
+    color: black; /* Initial text color */
+    transition: color 0.7s ease
+  }
+
+  .navigation-bar li a:hover{
+    color: #7a6255;
+    font-weight: 600;
+  }
+
+  .rounded-container1 {
+    float: right;
+    width: 650px; /* 70% of the viewport width */
+    height: 250px; 
+    padding: 10px;
+    margin: 40px;
+    border: 10px solid #F5EFE6; /* Border color represents the frame color */
+    border-radius: 20px; /* Adjust the border-radius to control the roundness */
+    background-color: #F5EFE6; /* Set the background color of the container */
+} 
+
+h2 {
+
+    text-align: center;
+}
+
+.container-p {
+    margin-top:10%;
+    margin-left: 5%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;     
+}
+
+p {
+    font-size: 21px;
+}
+
+input[type=text]{
+    width: 70%;
+    border: none;
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #F5EFE6;
+}
+
+label {
+    align-items: start;
+    margin-left: 5%;
+}
+
+.profile_button {
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;  
+}
+
+
+.profile_button a {
+    text-decoration: none;
+    color: #000;
+}
+
+.profile_button a:hover{
+    text-decoration: underline;
+    color: #D8B6A4;
+}
+
+
+.rounded-container2{
+    float: left;
+    width: 90%; /* 70% of the viewport width */
+    height: 250px; 
+    padding: 10px;
+    margin: 50px;
+    border: 10px solid #F5EFE6; /* Border color represents the frame color */
+    border-radius: 20px; /* Adjust the border-radius to control the roundness */
+    background-color: #F5EFE6; /* Set the background color of the container */
+} 
+
+.div1 {
+    float: left;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left:  10%;
+
+}
+
+
+.div2 {
+    float: right;
+    display: flex;
+    flex-direction: row;
+}
+
+.div2 img {
+    width: 200px;
+    height: 100px;
+    margin-top: 10%;
+}
+.rounded-container2 input[type=text] {
+    width: 30%;
+    border: none;
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #F5EFE6;
+}
+
+button {
+    position: absolute;
+    right: 10%;
+    bottom:   3%;
+    transform: translateX(-50%);
+    font-size: 21px;
+    width: 150px;
+    height: 50px;
+    background-color: #E9DAC1;
+    border: 10px;
+    border-radius: 20px;    
+}
+
+button:hover{
+    font-size: 21px;
+    background-color: #D8B6A4;
+    border: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    
+
+} 
+
+p {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    margin-left: 10%;
+    position: absolute;
+    top: 30%;
+}

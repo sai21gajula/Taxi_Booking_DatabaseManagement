@@ -1,0 +1,10 @@
+INSERT INTO Rating 
+(customer_rating, customer_feedback, Completed_tripscompleted_id) 
+VALUES 
+(5, 'Very polite driver', 1),
+(3, 'Average ride', 2),
+(4, 'Smooth trip overall', 3),
+(2, 'Late arrival', 4),
+(4, 'Friendly driver', 5),
+(3, 'Not a comfortable ride', 6),
+(4, 'Good experience', 7);

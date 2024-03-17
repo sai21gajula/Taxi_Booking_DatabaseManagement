@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Booking</title>
+    <link rel="stylesheet" href="../static/customer_home.css">
+</head>
+<body>
+
+    <div class="navigation-bar">
+
+
+        <div id="navigation-container">
+        <img src="../static/logo.svg" alt="logo" width="80px" height="100px">    
+          <ul>
+            <li><a href="/cusotomer_home ">Home</a></li>
+            <li><a href="/customer_profile">Profile</a></li>
+            <li><a href="/customer_history">History</a></li>
+            <li><a href="{{url_for('logout')}}">Log out</a></li>
+
+          </ul>
+        </div>
+    </div>
+
+        
+    <div class="container">
+        <div class="title_customer_home">        
+            <h1>Hello</h1>
+            <h1>Customer,</h1>
+        </div>
+    </div>
+    
+    <img src="../static/taxi.svg" class="taxi_image" alt="taxi_image" width="700px" height="500px">
+
+    <div class="rounded-container">
+        <!-- Your content goes here -->
+        <div>
+            <h2>
+                Book a Ride
+            </h2>
+            <p class='container-p'>Enter ride details:</p>
+
+            <form method="POST" action="/customer_home">
+            <input type="text" id="pickup_loc" placeholder="Pick up location" name="pickup_loc" required>
+            <input type="text" id="dropoff_loc" placeholder="Drop off location" name="dropoff_loc" required>
+            <input type="text" id="num_riders" placeholder="Number of passengers" name="num_riders" required>
+            <input type="submit" value="Book" id='book'>
+            </form>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

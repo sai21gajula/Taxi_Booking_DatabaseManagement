@@ -1,0 +1,179 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 -- Inserting data into Trip_requests table\
+\
+\
+INSERT INTO Trip_requests \
+(pickup_loc, dropoff_loc, distance, estfare, request_time, Pickup_time_estimationpickup_id, Rider_detailsrider_id, Pickup_time_estimationDriverdriver_id) \
+VALUES \
+('New York', 'Brooklyn', 10.5, 25.00, '2023-11-30 08:00:00', 1, 1, 1),\
+('Los Angeles', 'Santa Monica', 15.2, 30.50, '2023-11-30 09:30:00', 2, 2, 2),\
+('Chicago', 'Oak Park', 8.0, 20.00, '2023-11-30 11:00:00', 3, 3, 3),\
+('Houston', 'Sugar Land', 12.7, 28.00, '2023-11-30 13:30:00', 4, 4, 4),\
+('Miami', 'Coral Gables', 6.3, 15.00, '2023-11-30 15:00:00', 5, 5, 5),\
+('San Francisco', 'Berkeley', 18.5, 35.00, '2023-11-30 16:30:00', 6, 6, 6),\
+('Seattle', 'Bellevue', 14.8, 30.00, '2023-11-30 18:00:00', 7, 7, 7),\
+('Boston', 'Cambridge', 10.0, 22.00, '2023-11-30 19:30:00', 8, 8, 8),\
+('Atlanta', 'Decatur', 11.9, 26.50, '2023-11-30 21:00:00', 9, 9, 9),\
+('Denver', 'Aurora', 9.5, 21.50, '2023-11-30 22:30:00', 10, 10, 10);\
+\
+\
+\
+-- Inserting data into Incomplete_trips table\
+INSERT INTO Incomplete_trips \
+(booking_time, cancel_time, reason, Trip_requeststrip_id) \
+VALUES \
+('2023-11-30 08:30:00', '2023-11-30 08:45:00', 'Rider not available', 1),\
+('2023-11-30 10:00:00', '2023-11-30 10:15:00', 'Driver unavailable', 2),\
+('2023-11-30 12:00:00', '2023-11-30 12:10:00', 'Change of plans', 3),\
+('2023-11-30 14:30:00', '2023-11-30 14:40:00', 'Emergency situation', 4),\
+('2023-11-30 16:00:00', '2023-11-30 16:15:00', 'Traffic congestion', 5),\
+('2023-11-30 17:30:00', '2023-11-30 17:45:00', 'Driver canceled', 6),\
+('2023-11-30 19:00:00', '2023-11-30 19:15:00', 'Weather conditions', 7),\
+('2023-11-30 21:00:00', '2023-11-30 21:10:00', 'Unexpected delay', 8),\
+('2023-11-30 22:30:00', '2023-11-30 22:40:00', 'Changed destination', 9),\
+('2023-11-30 23:45:00', '2023-11-30 23:55:00', 'Payment issues', 10);\
+\
+-- Inserting data into Completed_trips table\
+INSERT INTO Completed_trips \
+(driver_arrived_at, pickup_time, dropoff_time, duration, actfare, tip, Trip_requeststrip_id) \
+VALUES \
+('2023-11-30 08:15:00', '2023-11-30 08:30:00', '2023-11-30 09:15:00', 45, 18.50, 2.50, 1),\
+('2023-11-30 09:45:00', '2023-11-30 10:00:00', '2023-11-30 10:30:00', 30, 14.20, 1.80, 2),\
+('2023-11-30 11:30:00', '2023-11-30 11:45:00', '2023-11-30 12:15:00', 30, 10.80, 1.20, 3),\
+('2023-11-30 14:00:00', '2023-11-30 14:15:00', '2023-11-30 15:00:00', 45, 15.60, 2.40, 4),\
+('2023-11-30 15:45:00', '2023-11-30 16:00:00', '2023-11-30 16:45:00', 45, 20.30, 3.70, 5),\
+('2023-11-30 17:15:00', '2023-11-30 17:30:00', '2023-11-30 18:00:00', 30, 9.80, 1.20, 6),\
+('2023-11-30 18:45:00', '2023-11-30 19:00:00', '2023-11-30 19:45:00', 45, 14.90, 2.10, 7),\
+('2023-11-30 20:15:00', '2023-11-30 20:30:00', '2023-11-30 21:15:00', 45, 17.60, 2.40, 8),\
+('2023-11-30 21:30:00', '2023-11-30 21:45:00', '2023-11-30 22:30:00', 45, 21.20, 3.80, 9),\
+('2023-11-30 23:00:00', '2023-11-30 23:15:00', '2023-11-30 23:45:00', 30, 13.50, 1.50, 10);\
+\
+\
+\
+-- Inserting data into Rating table\
+INSERT INTO Rating \
+(customer_rating, customer_feedback, Completed_tripscompleted_id) \
+VALUES \
+(4, 'Great service!', 1),\
+(5, 'Very polite driver', 2),\
+(3, 'Average ride', 3),\
+(4, 'Smooth trip overall', 4),\
+(5, 'Excellent service', 5),\
+(2, 'Late arrival', 6),\
+(4, 'Friendly driver', 7),\
+(5, 'Quick and efficient', 8),\
+(3, 'Not a comfortable ride', 9),\
+(4, 'Good experience', 10);\
+\
+-- Inserting data into Offers table\
+INSERT INTO Offers \
+(promo_code, promo_discount, Rider_detailsrider_id) \
+VALUES \
+('OFFER10', 10.00, 1),\
+('SAVE15', 15.00, 2),\
+('DISCOUNT20', 20.00, 3),\
+('CODE25', 25.00, 4),\
+('SAVEMORE30', 30.00, 5),\
+('FIFTYOFF', 50.00, 6),\
+('GRAB40', 40.00, 7),\
+('RIDE45', 45.00, 8),\
+('WOW50', 50.00, 9),\
+('MAXDISCOUNT', 30.00, 10);\
+\
+-- Inserting data into Surge table\
+INSERT INTO Surge \
+(surge_cost, Trip_requeststrip_id) \
+VALUES \
+(5.00, 1),\
+(3.50, 2),\
+(8.00, 3),\
+(6.20, 4),\
+(7.50, 5),\
+(10.00, 6),\
+(4.80, 7),\
+(6.50, 8),\
+(9.00, 9),\
+(5.80, 10);\
+\
+-- Inserting data into Driver table\
+INSERT INTO Driver \
+(driver_first_name, driver_last_name, working_hours, license_no, phone_num, driver_email, driver_pass, rating) \
+VALUES \
+('John', 'Doe', 8, 'ABC123', '123-456-7890', 'john.doe@email.com', 'password123', 4.5),\
+('Jane', 'Smith', 10, 'XYZ456', '987-654-3210', 'jane.smith@email.com', 'securepass', 4.2),\
+('David', 'Johnson', 9, 'PQR789', '456-789-0123', 'david.johnson@email.com', 'pass123', 4.8),\
+('Emily', 'Williams', 12, 'LMN012', '321-987-6543', 'emily.williams@email.com', 'securepassword', 4.1),\
+('Michael', 'Brown', 8, 'JKL345', '789-012-3456', 'michael.brown@email.com', 'mypass123', 4.7),\
+('Sophia', 'Davis', 11, 'GHI678', '234-567-8901', 'sophia.davis@email.com', 'password456', 4.3),\
+('Daniel', 'Miller', 10, 'DEF901', '567-890-1234', 'daniel.miller@email.com', 'mypassword', 4.6),\
+('Olivia', 'Moore', 9, 'UVW234', '012-345-6789', 'olivia.moore@email.com', 'password789', 4.4),\
+('Ethan', 'Clark', 8, 'RST567', '345-678-9012', 'ethan.clark@email.com', 'pass456', 4.9),\
+('Ava', 'Wilson', 10, 'HIJ890', '678-901-2345', 'ava.wilson@email.com', 'securepass123', 4.0);\
+\
+-- Inserting data into Rider_details and Customer_details tables\
+INSERT INTO Rider_details \
+(num_riders, Customer_detailscustomer_id) \
+VALUES \
+(1, 1),\
+(1, 2),\
+(2, 3),\
+(1, 4),\
+(3, 5),\
+(1, 6),\
+(2, 7),\
+(1, 8),\
+(2, 9),\
+(1, 10);\
+\
+INSERT INTO Customer_details \
+(Customer_email, Customer_pass, customer_first_name, customer_last_name, phone_num, email, date_of_birth) \
+VALUES \
+('rider1@email.com', 'riderpass1', 'John', 'Doe', '123-456-7890', 'rider1@email.com', '1990-05-15'),\
+('rider2@email.com', 'riderpass2', 'Jane', 'Smith', '987-654-3210', 'rider2@email.com', '1985-08-22'),\
+('rider3@email.com', 'riderpass3', 'David', 'Johnson', '456-789-0123', 'rider3@email.com', '1992-12-01'),\
+('rider4@email.com', 'riderpass4', 'Emily', 'Williams', '321-987-6543', 'rider4@email.com', '1988-03-28'),\
+('rider5@email.com', 'riderpass5', 'Michael', 'Brown', '789-012-3456', 'rider5@email.com', '1995-06-10'),\
+('rider6@email.com', 'riderpass6', 'Sophia', 'Davis', '234-567-8901', 'rider6@email.com', '1999-09-17'),\
+('rider7@email.com', 'riderpass7', 'Daniel', 'Miller', '567-890-1234', 'rider7@email.com', '1997-02-05'),\
+('rider8@email.com', 'riderpass8', 'Olivia', 'Moore', '012-345-6789', 'rider8@email.com', '1994-07-12'),\
+('rider9@email.com', 'riderpass9', 'Ethan', 'Clark', '345-678-9012', 'rider9@email.com', '1996-10-25'),\
+('rider10@email.com', 'riderpass10', 'Ava', 'Wilson', '678-901-2345', 'rider10@email.com', '1991-04-03');\
+\
+-- Inserting data into Cab_details table\
+INSERT INTO Cab_details \
+(licence_plate_no, model, brand, max_seats, manufacture_year, Driverdriver_id) \
+VALUES \
+('ABC123', 'Sedan', 'Toyota', 4, 2020, 1),\
+('XYZ456', 'SUV', 'Ford', 6, 2019, 2),\
+('PQR789', 'Hatchback', 'Honda', 5, 2021, 3),\
+('LMN012', 'Van', 'Chevrolet', 8, 2018, 4),\
+('JKL345', 'Sedan', 'Nissan', 4, 2022, 5),\
+('GHI678', 'SUV', 'Jeep', 6, 2017, 6),\
+('DEF901', 'Hatchback', 'Hyundai', 5, 2019, 7),\
+('UVW234', 'Van', 'Dodge', 8, 2020, 8),\
+('RST567', 'Sedan', 'Volkswagen', 4, 2023, 9),\
+('HIJ890', 'SUV', 'Kia', 6, 2021, 10);\
+\
+\
+-- Inserting data into Pickup_time_estimation table\
+INSERT INTO Pickup_time_estimation \
+(pickup_id, driver_location, pickup_time_estimate, Driverdriver_id) \
+VALUES \
+(1, 'Union Square, New York', '2023-11-30 08:15:00', 1),\
+(2, 'Hollywood Boulevard, Los Angeles', '2023-11-30 09:45:00', 2),\
+(3, 'Millennium Park, Chicago', '2023-11-30 11:30:00', 3),\
+(4, 'Downtown Houston', '2023-11-30 14:00:00', 4),\
+(5, 'South Beach, Miami', '2023-11-30 15:45:00', 5),\
+(6, 'Fisherman\\'s Wharf, San Francisco', '2023-11-30 17:15:00', 6),\
+(7, 'Space Needle, Seattle', '2023-11-30 18:45:00', 7),\
+(8, 'Fenway Park, Boston', '2023-11-30 20:15:00', 8),\
+(9, 'Centennial Olympic Park, Atlanta', '2023-11-30 21:30:00', 9),\
+(10, 'Red Rocks Amphitheatre, Denver', '2023-11-30 23:00:00', 10);\
+\
+}

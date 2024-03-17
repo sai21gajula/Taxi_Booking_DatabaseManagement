@@ -1,0 +1,176 @@
+body {
+    background-color: #E8DFCA;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+}
+
+.logo {
+    float: left;
+  }
+  /* ~~ Top Navigation Bar ~~ */
+  /* Add this CSS for the popup message */
+.popup-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+  #navigation-container {
+    width: 1200px;
+    margin: 0 auto;
+    height: 100px;
+  }
+  
+  .navigation-bar {
+    height: 100px;
+    width: 100%;
+    text-align:right;
+  }
+  .navigation-bar img{
+  float:left;
+  }
+  .navigation-bar ul {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    display:inline-block;
+    vertical-align:top;
+  }
+  
+  .navigation-bar li {
+    list-style-type: none;
+    padding: 0px;
+    height: 24px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: inline;
+  }
+  
+  .navigation-bar li a {
+    color: black;
+    font-size: 16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    line-height: 70px;
+    padding: 5px 15px;
+    opacity: 0.7;
+    color: black; /* Initial text color */
+    transition: color 0.7s ease
+  }
+
+  .navigation-bar li a:hover{
+    color: #7a6255;
+    font-weight: 600;
+  }
+  .rounded-container {
+    margin: 0 auto;
+    width: auto; /* 70% of the viewport width */
+    height: 80%; 
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 10px solid #F5EFE6; /* Border color represents the frame color */
+    border-radius: 20px; /* Adjust the border-radius to control the roundness */
+    background-color: #F5EFE6; /* Set the background color of the container */
+} 
+
+h2 {
+
+    text-align: center;
+}
+
+.container-p {
+    margin-top:10%;
+    margin-left: 5%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;     
+}
+
+p {
+    font-size: 21px;
+}
+
+input[type=text]{
+    width: 400px;
+    border: none;
+    border-bottom: 2px solid black;
+    margin: 20px;
+    font-size: 21px;
+    text-align: center;
+    background-color: #F5EFE6;
+}
+
+label {
+    width: 100px;
+    align-items: start;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.divider {
+    display: flex;
+    margin: 0 auto;
+}
+
+.divider select{
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.drop_down {
+    width: 150px;
+    align-items: start;
+    margin-top: 4%;  
+    margin-right: 20%; 
+}
+
+.divider_dropdown {
+    display: flex;
+    margin: 0 auto;
+}
+
+.divider_dropdown select{
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transform: translateX(-35%);
+
+}
+
+.payment_button {
+    margin: 0 auto;
+    transform: translateX(5%);
+}
+
+#payment {
+    font-size: 21px;
+    width: 250px;
+    height: 50px;
+    background-color: #E9DAC1;
+    border: 10px;
+    border-radius: 20px;
+
+}
+
+#payment:hover{
+    font-size: 21px;
+    width: 250px;
+    height: 50px;
+    background-color: #D8B6A4;
+    border: 10px;
+    border-radius: 20px;
+    
+
+} 

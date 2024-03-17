@@ -1,0 +1,13 @@
+INSERT INTO Customer_details 
+(Customer_email, Customer_pass, customer_first_name, customer_last_name, phone_num, email, date_of_birth) 
+VALUES 
+('rider1@email.com', 'riderpass1', 'John', 'Doe', '123-456-7890', 'rider1@email.com', '1990-05-15'),
+('rider2@email.com', 'riderpass2', 'Jane', 'Smith', '987-654-3210', 'rider2@email.com', '1985-08-22'),
+('rider3@email.com', 'riderpass3', 'David', 'Johnson', '456-789-0123', 'rider3@email.com', '1992-12-01'),
+('rider4@email.com', 'riderpass4', 'Emily', 'Williams', '321-987-6543', 'rider4@email.com', '1988-03-28'),
+('rider5@email.com', 'riderpass5', 'Michael', 'Brown', '789-012-3456', 'rider5@email.com', '1995-06-10'),
+('rider6@email.com', 'riderpass6', 'Sophia', 'Davis', '234-567-8901', 'rider6@email.com', '1999-09-17'),
+('rider7@email.com', 'riderpass7', 'Daniel', 'Miller', '567-890-1234', 'rider7@email.com', '1997-02-05'),
+('rider8@email.com', 'riderpass8', 'Olivia', 'Moore', '012-345-6789', 'rider8@email.com', '1994-07-12'),
+('rider9@email.com', 'riderpass9', 'Ethan', 'Clark', '345-678-9012', 'rider9@email.com', '1996-10-25'),
+('rider10@email.com', 'riderpass10', 'Ava', 'Wilson', '678-901-2345', 'rider10@email.com', '1991-04-03');

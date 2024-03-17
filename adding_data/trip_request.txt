@@ -1,0 +1,17 @@
+INSERT INTO Trip_requests 
+(
+    pickup_loc, dropoff_loc, distance, estfare, request_time, 
+    Pickup_time_estimationpickup_id, Rider_detailsrider_id, pickup_time_estimate, 
+    Pickup_time_estimationDriverdriver_id, request_status
+) 
+VALUES 
+    ('China Town', 'Backbay', 10.5, 25.00, '2023-11-30 08:00:00', 1, 1, 10, 1, 'Cancelled'),
+    ('Medford', 'Newbury st', 15.2, 30.50, '2023-11-30 09:30:00', 2, 2, 4, 2,'Booked' ),
+    ('Logan airport', 'Fenway', 8.0, 20.00, '2023-11-30 11:00:00', 3, 3, 5, 3,'Booked' ),
+    ('Brookline', 'Berklee college of music', 12.7, 28.00, '2023-11-30 13:30:00', 4, 4, 6, 4,'Booked'),
+    ('Lower Roxbury', 'Charles Esplanade', 6.3, 15.00, '2023-11-30 15:00:00', 5, 5, 4, 5, 'Cancelled'),
+    ('Boylston st', 'Cambrigde', 18.5, 35.00, '2023-11-30 16:30:00', 6, 6, 8, 6,'Booked'),
+    ('Washington st', 'Mit', 14.8, 30.00, '2023-11-30 18:00:00', 7, 7, 8, 7,'Booked'),
+    ('New jersey st', 'Malden', 10.0, 22.00, '2023-11-30 19:30:00', 8, 8, 15, 8,'Cancelled'),
+    ('Harvard', 'Northeastern', 11.9, 26.50, '2023-11-30 21:00:00', 9, 9, 7, 9,'Booked'),
+    ('Kenmore', 'Jamaica plain', 9.5, 21.50, '2023-11-30 22:30:00', 10, 10, 3, 10,'Booked');
